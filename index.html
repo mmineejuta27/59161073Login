@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="container">
+                    <h1 class="title">
+                        Login
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+
+        <div class="container">
+            <article class="tile is-child is-2">
+                <div class="help is-danger" id="help-empty"></div>
+                <div class="field">
+                    <h1 class="subtitle">Name</h1>
+                    <div class="control">
+                        <input class="input" type="text" id="name">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <h1 class="subtitle">Lastname</h1>
+                    <div class="control">
+                        <input class="input" type="text" id="pass">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <h1 class="subtitle">AutoBot</h1>
+                    <div class="control">
+                        <input class="input" type="text" id="auto" placeholder="Fill Number">
+                    </div>
+
+                    <div class="field">
+                    <a href="forget.html">Forget Password?</a>
+                    </div>
+
+                    
+                    <br>
+                    <a id="click">
+                        <button class="button is-success is-fullwidth" onclick="checkPass()">Login</button>
+                     </div>
+                     
+                     </article>
+                </div>
+
+
+                <script>
+                    function checkPass() {
+                        var a1 = document.getElementById("name").value;
+                        var a2 = document.getElementById("pass").value;
+                        var a3 = document.getElementById("auto").value;
+
+                        if (a1 == "" || a2 == "") {
+                            document.getElementById("name").classList.add("is-danger");
+                            document.getElementById("pass").classList.add("is-danger");
+                            document.getElementById("help-empty").innerHTML = "Username or Password is wrong";
+                        }else if(a1=="admin" && a2=="1234"){
+                            window.location = "succes.html";
+                        }else{
+                            document.getElementById("help-empty").innerHTML = "Username or Password is wrong";
+                        }
+                    }
+                </script>
+
+
+               
+       
+    </section>
+
+</body>
+
+</html>
